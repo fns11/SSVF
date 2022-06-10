@@ -34,7 +34,7 @@ with st.container():
     st.write(
         "Q: Where did you sleep last night, tell us all about it."
     )
-    Original_list = ('Learn More', 'Shelter/Streets', 'Family/Friends',' or Renting')
+    st.selectbox('Learn More', 'Shelter/Streets', 'Family/Friends',' or Renting')
 
 # ---- WHAT I DO ----
 with st.container():
