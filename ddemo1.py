@@ -32,7 +32,7 @@ with st.container():
     st.subheader("Welcome to the SSVF Portal:wave:")
     st.title("We link you with a Veteran Counselor that's here to assist you")
     st.write (
-        "Q: Where did you sleep last night, tell us all about it."
+        "First Intake Question: Where did you sleep last night, tell us all about it."
     )
     select_options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
     select_options = st.selectbox('Learn More',['Shelter or Streets', 'Family or Friends', 'or Renting'])
