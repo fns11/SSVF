@@ -34,7 +34,7 @@ with st.container():
     st.write (
         "Q: Where did you sleep last night, tell us all about it."
     )
-    select options =['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting')
+    select options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
     st.selectbox('Learn More', 'Shelter or Streets', 'Family or Friends',' or Renting')
 
 # ---- WHAT I DO ----
