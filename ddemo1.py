@@ -34,7 +34,7 @@ with st.container():
     st.write(
         "Q: Where did you sleep last night, tell us all about it."
     )
-    st.write("[Learn More >](https://youtu.be/ix1BUgTztGU)")
+    st.selectbox("[Learn More>', [Shelter/Streets', 'Family/Friends',' or Renting'], key=1)
 
 # ---- WHAT I DO ----
 with st.container():
