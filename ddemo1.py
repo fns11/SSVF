@@ -35,7 +35,7 @@ with st.container():
         "Q: Where did you sleep last night, tell us all about it."
     )
     select_options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
-    st.selectbox('Learn More', 'Shelter or Streets', 'Family or Friends',' or Renting')
+    select_options = st.selectbox('Learn More', 'Shelter or Streets', 'Family or Friends',' or Renting')
 
 # ---- WHAT I DO ----
 with st.container():
