@@ -146,7 +146,7 @@ with st.form(key='columns_in_form'):
         col.selectbox(f'Choose Your Forms', ['SSVF Screening', 'or SSVF Intake'], key=i)
     submitted = st.form_submit_button('Submit')
     
-with st.form(key='columns_in_form'):
+with st.form(key='columns_in_form1'):
     c1, c2, c3, c4 = st.columns(4)
 with c1:
     initialInvestment = st.text_input("Starting capital",value=500)
