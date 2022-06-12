@@ -145,3 +145,16 @@ with st.form(key='columns_in_form'):
     for i, col in enumerate(cols):
         col.selectbox(f'Choose Your Forms', ['SSVF Screening', 'or SSVF Intake'], key=i)
     submitted = st.form_submit_button('Submit')
+    
+    with st.form(key='columns_in_form'):
+    c1, c2, c3, c4 = st.columns(4)
+    with c1:
+        initialInvestment = st.text_input("Starting capital",value=500)
+    with c2:
+        monthlyContribution = st.text_input("Monthly contribution (Optional)",value=100)
+    with c3:
+        annualRate = st.text_input("Annual increase rate in percentage",value="15")
+    with c4:
+        investingTimeYears = st.text_input("Duration in years:",value=10)
+
+    submitButton = st.form_submit_button(label = 'Calculate')
