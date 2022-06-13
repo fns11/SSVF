@@ -40,8 +40,6 @@ with st.container():
     uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
 if uploaded_file is not None:
 
-#(uploaded_file)
-
 # ---- WHAT I DO ----
 with st.container():
     st.write("---")
