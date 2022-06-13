@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
 
-uploaded_file = st.file_uploader('CIntake Packet1 SSVF', type="pdf")
+uploaded_file = st.file_uploader('Intake Packet1 SSVF.pdf', type="pdf")
 if uploaded_file is not None:
     df = extract_data(uploaded_file)
 
