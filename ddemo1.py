@@ -3,13 +3,9 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
 
-uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
-if uploaded_file is not None:
-    df = extract_data(uploaded_file)
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
-
 
 def load_lottieurl(url):
     r = requests.get(url)
@@ -40,6 +36,9 @@ with st.container():
     )
     select_options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
     select_options = st.selectbox('Learn More',['Shelter or Streets', 'Family or Friends', 'or Renting'])
+uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
+if uploaded_file is not None:
+    df = extract_data(uploaded_file)
 
 # ---- WHAT I DO ----
 with st.container():
