@@ -36,11 +36,11 @@ with st.container():
     )
     select_options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
     select_options = st.selectbox('Learn More',['Shelter or Streets', 'Family or Friends', 'or Renting'])
-uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
+
+    uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
 if uploaded_file is not None:
 
-    
-    pdf = extract_dpdf_display = F'<embed src=”data:application/pdf;base64,{base64_pdf}” width=”700″ height=”1000″ type=”application/pdf”>'ata(uploaded_file)
+#(uploaded_file)
 
 # ---- WHAT I DO ----
 with st.container():
