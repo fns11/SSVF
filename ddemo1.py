@@ -39,9 +39,11 @@ with st.container():
 
     uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
     if uploaded_file is not None:
+        
+        
 
 # ---- WHAT I DO ----
-    with st.container():
+        with st.container():
     st.write("---")
     left_column, right_column = st.columns(2)
     with left_column:
