@@ -37,19 +37,20 @@ with st.container():
     select_options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
     select_options = st.selectbox('Learn More',['Shelter or Streets', 'Family or Friends', 'or Renting'])
 
-    uploaded_file = st.file_uploader('upload your docs or pdf files here', type="pdf")
-    if uploaded_file is not None:
+ uploaded_file = st.file_uploader('upload your docs or pdf files here', type="pdf")
+  if uploaded_file is not None:
         
         
 
 # ---- WHAT I DO ----
-        with st.container():
-        st.write("---")
-        left_column, right_column = st.columns(2)
-        with left_column:
-        st.header("What we do to get you the assistance you need")
-        st.write("##")
-        st.write(
+with st.container():
+ st.write("---")
+  left_column, right_column = st.columns(2)
+ with left_column:
+    
+    st.header("What we do to get you the assistance you need")
+    st.write("##")
+    st.write(
             """
             On my YouTube channel I am creating tutorials for people who:
             - are you looking for a way to look for housing.
