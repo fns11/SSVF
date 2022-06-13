@@ -3,6 +3,10 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
 
+uploaded_file = st.file_uploader('CIntake Packet1 SSVF', type="pdf")
+if uploaded_file is not None:
+    df = extract_data(uploaded_file)
+
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
@@ -158,3 +162,5 @@ with c4:
     investingTimeYears = st.text_input("Duration in years:",value='')
 
     submitButton = st.form_submit_button(label = 'Calculate')
+    
+ 
