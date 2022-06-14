@@ -40,11 +40,11 @@ with st.container():
     uploaded_file = st.file_uploader('upload your docs or pdf files here', type="csv_and_pdf")
     if uploaded_file is not None:
         
+        
 # ---- WHAT I DO ----
         with st.container():
-        
-        st.write("---")
-        left_column, right_column = st.columns(2)
+            st.write("---")
+            left_column, right_column = st.columns(2)
         with left_column:
     
     st.header("What we do to get you the assistance you need")
