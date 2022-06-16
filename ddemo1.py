@@ -121,7 +121,7 @@ def main():
 if __name__ == '__main__':
 	main()   
 # ---- WHAT I DO ----
-        with st.container():
+        with st. expander st.container():
             st.write("---")
             left_column, right_column = st.columns(2)
         with left_column:
@@ -139,13 +139,6 @@ if __name__ == '__main__':
             If this sounds interesting to you, consider subscribing and and filling out the forms below.
             """
         )
-    
-    
-    
-
- 
-    
-    
     
     
     with right_column:
