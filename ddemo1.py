@@ -39,8 +39,6 @@ with st.container():
     select_options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
     select_options = st.selectbox('Learn More',['Shelter or Streets', 'Family or Friends', 'or Renting'])
         
-     import streamlit as st 
-import streamlit.components as stc
 
 # Utils
 import base64 
