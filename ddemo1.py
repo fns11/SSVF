@@ -60,10 +60,14 @@ with st.container():
             If this sounds interesting to you, consider subscribing and and filling out the forms below.
             """
         )
-st.write("[YouTube Channel >](https://youtu.be/zjTE48Ab9J0)")
 
-with right_column:
-    st_lottie(lottie_coding, height=300, key="coding")
+    st.write("[YouTube Channel >](https://youtu.be/zjTE48Ab9J0)")
+    
+
+    with right_column:
+        
+    
+        st_lottie(lottie_coding, height=300, key="coding")
 
 # ---- PROJECTS ----
 with st.container():
