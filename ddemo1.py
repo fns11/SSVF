@@ -50,6 +50,8 @@ with st.container():
         with left_column:
             st.header("What we do to get you the assistance you need")
     st.write("##")
+       st.write("[YouTube Channel >](https://youtu.be/zjTE48Ab9J0)")
+    
     st.write(
             """
             On my YouTube channel I am creating tutorials for people who:
