@@ -58,7 +58,7 @@ class FileDownloader(object):
 def main():
 	menu = ["Home","CSV","About"]
 
-	choice = st.sidebar.selectbox("Information Menu",Information_menu)
+	choice = st.sidebar.selectbox("Information Menu",Information Menu)
 
 	if choice == "Home":
 		st.subheader("Home")
