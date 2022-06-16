@@ -38,9 +38,6 @@ with st.container():
     )
     select_options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
     select_options = st.selectbox('Learn More',['Shelter or Streets', 'Family or Friends', 'or Renting'])
-
-    uploaded_file = st.file_uploader('upload your docs or pdf files here', type="csv_and_pdf")
-    if uploaded_file is not None:
         
      import streamlit as st 
 import streamlit.components as stc
@@ -199,6 +196,8 @@ with st.container():
     with right_column:
         st.empty()
 st.write("---")
+ uploaded_file = st.file_uploader('upload your docs or pdf files here', type="csv_and_pdf")
+    if uploaded_file is not None:
 
 st.title("SSVF Forms Selection")
               
