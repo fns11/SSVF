@@ -1,13 +1,11 @@
 import requests
 import streamlit as st
-import streamlit.components as stc
 from streamlit_lottie import st_lottie
 from PIL import Image
 
-
-
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
+
 
 def load_lottieurl(url):
     r = requests.get(url)
@@ -33,98 +31,19 @@ img_lottie_animation = Image.open("demo_image1.png")
 with st.container():
     st.subheader("Welcome to the SSVF Portal:wave:")
     st.title("We link you with a Veteran Counselor that's here to assist you")
-    st.write (
-        "First Intake Question: Where did you sleep last night, tell us all about it."
+    st.write(
+        "Q: Where did you sleep last night, tell us all about it."
     )
-    select_options = ['Learn More', 'Shelter or Streets', 'Family or Friends', 'or Renting']
-    select_options = st.selectbox('Learn More',['Shelter or Streets', 'Family or Friends', 'or Renting'])
-        
+    st.write("[Learn More >](https://youtu.be/ix1BUgTztGU)")
 
-# Utils
-import base64 
-import time
-timestr = time.strftime("%Y%m%d-%H%M%S")
-import pandas as pd 
-
-
-
-# Fxn
-def text_downloader(raw_text):
-	b64 = base64.b64encode(raw_text.encode()).decode()
-	new_filename = "new_text_file_{}_.txt".format(timestr)
-	st.markdown("#### Download File ###")
-	href = f'<a href="data:file/txt;base64,{b64}" download="{new_filename}">Click Here!!</a>'
-	st.markdown(href,unsafe_allow_html=True)
-
-
-def csv_downloader(data):
-	csvfile = data.to_csv()
-	b64 = base64.b64encode(csvfile.encode()).decode()
-	new_filename = "new_text_file_{}_.csv".format(timestr)
-	st.markdown("#### Download File ###")
-	href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Click Here!!</a>'
-	st.markdown(href,unsafe_allow_html=True)
-
-# Class
-class FileDownloader(object):
-	"""docstring for FileDownloader
-	>>> download = FileDownloader(data,filename,file_ext).download()
-	"""
-	def __init__(self, data,filename='myfile',file_ext='txt'):
-		super(FileDownloader, self).__init__()
-		self.data = data
-		self.filename = filename
-		self.file_ext = file_ext
-
-	def download(self):
-		b64 = base64.b64encode(self.data.encode()).decode()
-		new_filename = "{}_{}_.{}".format(self.filename,timestr,self.file_ext)
-		st.markdown("#### Download File ###")
-		href = f'<a href="data:file/{self.file_ext};base64,{b64}" download="{new_filename}">Click Here!!</a>'
-		st.markdown(href,unsafe_allow_html=True)
-
-
-
-
-
-def main():
-	menu = ["Home","CSV","About"]
-
-	choice = st.sidebar.selectbox("Menu",menu)
-
-	if choice == "Home":
-		st.subheader("Home")
-		my_text = st.text_area("Your Message")
-		if st.button("Save"):
-			st.write(my_text)
-			# text_downloader(my_text)
-			download = FileDownloader(my_text).download()
-
-
-	elif choice == "CSV":
-		df = pd.read_csv("iris.csv")
-		st.dataframe(df)
-		# csv_downloader(df)
-		download = FileDownloader(df.to_csv(),file_ext='csv').download()
-
-
-	else:
-		st.subheader("About")
-
-
-
-if __name__ == '__main__':
-	main()   
 # ---- WHAT I DO ----
 with st.container():
     st.write("---")
     left_column, right_column = st.columns(2)
     with left_column:
         st.header("What we do to get you the assistance you need")
-    	st.write("##")
-    	st.write("[YouTube Channel >](https://youtu.be/zjTE48Ab9J0)")
-    
-    st.write(
+        st.write("##")
+        st.write(
             """
             On my YouTube channel I am creating tutorials for people who:
             - are you looking for a way to look for housing.
@@ -134,8 +53,7 @@ with st.container():
             If this sounds interesting to you, consider subscribing and and filling out the forms below.
             """
         )
-    
-    
+        st.write("[YouTube Channel >](https://youtu.be/zjTE48Ab9J0)")
     with right_column:
         st_lottie(lottie_coding, height=300, key="coding")
 
@@ -194,8 +112,6 @@ with st.container():
     with right_column:
         st.empty()
 st.write("---")
- uploaded_file = st.file_uploader('upload your docs or pdf files here', type="csv_and_pdf")
-    if uploaded_file is not None:
 
 st.title("SSVF Forms Selection")
               
