@@ -7,6 +7,7 @@ import pandas as pd
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
+
 # Utils
 import base64 
 import time
@@ -57,18 +58,18 @@ class FileDownloader(object):
 def main():
 	menu = ["Home","CSV","About"]
 
-	choice = st.sidebar.selectbox("Menu",menu)
+	choice = st.sidebar.selectbox("Information Menu",Information_menu)
 
 	if choice == "Home":
 		st.subheader("Home")
-		my_text = st.text_area("Your Message")
+		my_text = st.text_area("Ask a question")
 		if st.button("Save"):
 			st.write(my_text)
 			# text_downloader(my_text)
 			download = FileDownloader(my_text).download()
 
 
-	elif choice == "CSV":
+	elif choice == "Application":
 		df = pd.read_csv("iris.csv")
 		st.dataframe(df)
 		# csv_downloader(df)
