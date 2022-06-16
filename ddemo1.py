@@ -5,6 +5,8 @@ from streamlit_lottie import st_lottie
 from PIL import Image
 import pandas as pd 
 
+# Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
+st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 # Utils
 import base64 
 import time
@@ -80,9 +82,6 @@ def main():
 
 if __name__ == '__main__':
 	main()
-
-# Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
 
 def load_lottieurl(url):
