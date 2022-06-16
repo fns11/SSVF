@@ -69,7 +69,7 @@ def main():
 			download = FileDownloader(my_text).download()
 
 
-	elif choice == "Application":
+	elif choice == "CSV":
 		df = pd.read_csv("iris.csv")
 		st.dataframe(df)
 		# csv_downloader(df)
