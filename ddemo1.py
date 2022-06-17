@@ -4,25 +4,32 @@ import streamlit.components as stc
 from streamlit_lottie import st_lottie
 from PIL import Image
 import pandas as pd 
+import base64
 
+# Function to Display PDF in Streamlit
+def st_display_pdf(Intake Packet1 SSVF.pdf):
+	with open(Intake Packet1 SSVF.pdf,'rb') as f:
+		base64_pdf = base64.b64encode(f.read()0.decode('utf-8')
+	pdf_display = f'<embed src='data:application/pdf;bassed64,{base64_pdf}' width='700' height='1000' ty
+	st.markdown(pdf_display, unsafe_allow_html = True)
+					      
+def main():
+    st.title('Embedding PDF into Streamlit')
+    st.subheader('Learn Stremalit')
+      
+  #Method 1
+  with open('Intake Packet1 SSVF.pdf','rb')as f:
+      base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+      pdf_display = f'<embded src='data:application/pdf;based64,{base64_pdf}' width= '700' height='1000'
+
+st.markdown(pdf_display, unsafe_allow_html=True)
+					      
+# Method 2
+					      
+st_display_pdf('Intake Packet1 SSVF.pdf')					     
+					  
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
-
-# Utils
-import base64 
-import time
-timestr = time.strftime("%Y%m%d-%H%M%S")
-
-
-
-
-# Fxn
-def text_downloader(raw_text):
-	b64 = base64.b64encode(raw_text.encode()).decode()
-	new_filename = "new_text_file_{}_.txt".format(timestr)
-	st.markdown("#### Download File ###")
-	href = f'<a href="data:file/txt;base64,{b64}" download="{new_filename}">Click Here!!</a>'
-	st.markdown(href,unsafe_allow_html=True)
 
 
 def csv_downloader(data):
@@ -32,28 +39,6 @@ def csv_downloader(data):
 	st.markdown("#### Download File ###")
 	href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Click Here!!</a>'
 	st.markdown(href,unsafe_allow_html=True)
-
-# Class
-class FileDownloader(object):
-	"""docstring for FileDownloader
-	>>> download = FileDownloader(data,filename,file_ext).download()
-	"""
-	def __init__(self, data,filename='myfile',file_ext='txt'):
-		super(FileDownloader, self).__init__()
-		self.data = data
-		self.filename = filename
-		self.file_ext = file_ext
-
-	def download(self):
-		b64 = base64.b64encode(self.data.encode()).decode()
-		new_filename = "{}_{}_.{}".format(self.filename,timestr,self.file_ext)
-		st.markdown("#### Download File ###")
-		href = f'<a href="data:file/{self.file_ext};base64,{b64}" download="{new_filename}">Click Here!!</a>'
-		st.markdown(href,unsafe_allow_html=True)
-
-
-
-
 
 def main():
 	menu = ["Home","CSV","About"]
