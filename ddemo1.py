@@ -7,7 +7,7 @@ import pandas as pd
 import base64
 
 # Function to Display PDF in Streamlit
-def st_display_pdf(Intake Packet1 SSVF.pdf):
+def st_display_pdf(Intake_Packet1_SSVF.pdf):
 	with open(Intake Packet1 SSVF.pdf,'rb') as f:
 		base64_pdf = base64.b64encode(f.read()0.decode('utf-8')
 	pdf_display = f'<embed src='data:application/pdf;bassed64,{base64_pdf}' width='700' height='1000' ty
