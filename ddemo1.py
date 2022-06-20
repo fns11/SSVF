@@ -16,8 +16,8 @@ with st.sidebar:
         "icon": {"color": "orange", "font-size": "25px"}, 
         "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#24A608"},
-    }
-    )
+    	}
+    	)
 
 # Function to Display PDF in Streamlit
 
