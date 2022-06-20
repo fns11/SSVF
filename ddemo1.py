@@ -20,26 +20,58 @@ with st.sidebar:
     )
 
 # Function to Display PDF in Streamlit
-def st_display_pdf('SSVF HP Screener v6 9.2021.pdf'):
-	with open('SSVF HP Screener v6 9.2021.pdf','rb') as f:
-		base64_pdf = base64.b64encode(f.read()0.decode('utf-8')
-	pdf_display = f'<embed src='data:application/pdf;bassed64,{base64_pdf}' width='700' height='1000' ty
-	st.markdown(pdf_display, unsafe_allow_html = True)
+
+        st.write('')
+        def show_pdf(file_path):
+            with open(file_path,"rb") as f:
+                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
+            st.markdown(pdf_display, unsafe_allow_html=True)
+        
+        if topic=='Pandas':
+            feature_image1 = Image.open(r'C:\Users\13525\Desktop\Insights Bees\streamlit_website\Images\feature_image1.jpg')
+            with st.container():
+                image_col, text_col = st.columns((1,3))
+                with image_col:
+                    st.image(feature_image1,caption='Image by Pixabay')
+                with text_col:
+                    st.markdown(""" <style> .font {
+                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
+                    </style> """, unsafe_allow_html=True)
+                    st.markdown('<p class="font">Clean a ‘Numeric’ ID Column in Pandas Dataframe</p>', unsafe_allow_html=True)    
+                    st.markdown("By Sharone Li - As a data scientist, you must have encountered this problem at least once in your data science journey: you import your data into a Pandas dataframe... [Continue to Read on Towards Data Science](https://towardsdatascience.com/clean-a-numeric-id-column-in-pandas-dataframe-fbe03c11e330)")
+
+            col1, col2,col3= st.columns(3)
+            with col1:  
+                if st.button('Read PDF Tutorial',key='1'):            
+                    show_pdf('post1-compressed.pdf')
+            with col2:
+                st.button('Close PDF Tutorial',key='2')                   
+            with col3:
+                with open("post1-compressed.pdf", "rb") as pdf_file:
+                    PDFbyte = pdf_file.read()
+                st.download_button(label="Download PDF Tutorial", key='3',
+                        data=PDFbyte,
+                        file_name="pandas-clean-id-column.pdf",
+                        mime='application/octet-stream')
+
+            for text in ["Is this tutorial helpful?"]:
+                    response = st_text_rater(text=text, key='1')
 					      
-def main():
-    st.title('Embedding PDF into Streamlit')
-    st.subheader('Learn Stremalit')
+#def main():
+    #st.title('Embedding PDF into Streamlit')
+    #st.subheader('Learn Stremalit')
       
   #Method 1
-  with open('Intake Packet1 SSVF.pdf','rb')as f:
-      base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-      pdf_display = f'<embded src='data:application/pdf;based64,{base64_pdf}' width= '700' height='1000'
+  #with open('Intake Packet1 SSVF.pdf','rb')as f:
+      #base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+      #pdf_display = f'<embded src='data:application/pdf;based64,{base64_pdf}' width= '700' height='1000'
 
-st.markdown(pdf_display, unsafe_allow_html=True)
+#st.markdown(pdf_display, unsafe_allow_html=True)
 					      
 # Method 2
 					      
-st_display_pdf('Intake Packet1 SSVF.pdf')					     
+#st_display_pdf('Intake Packet1 SSVF.pdf')					     
 					  
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
