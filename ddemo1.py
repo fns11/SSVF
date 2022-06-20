@@ -21,8 +21,19 @@ with st.sidebar:
 
 # Function to Display PDF in Streamlit
 
-       st.write('')
-       def show_pdf(file_path):
+logo = Image.open(r'C:\Users\13525\Desktop\Insights_Bees_logo.png')
+profile = Image.open(r'C:\Users\13525\Desktop\medium_profile.png')
+if choose == "About":
+    col1, col2 = st.columns( [0.8, 0.2])
+    with col1:               # To display the header text using css style
+        st.markdown(""" <style> .font {
+        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
+        </style> """, unsafe_allow_html=True)
+        st.markdown('<p class="font">About the Creator</p>', unsafe_allow_html=True)    
+    with col2:               # To display brand log
+        st.image(logo, width=130 )
+        st.write('')
+        def show_pdf(file_path):
             with open(file_path,"rb") as f:
                 base64_pdf = base64.b64encode(f.read()).decode('utf-8')
             pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
