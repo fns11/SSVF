@@ -5,7 +5,6 @@ from streamlit_lottie import st_lottie
 from PIL import Image
 import pandas as pd 
 import base64
-from streamlit_option_menu import option_menu
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
