@@ -21,7 +21,7 @@ with st.sidebar:
     )
 
 logo = Image.open('demo_image1.png')
-profile = Image.open(r'C:\demo_image2.png')
+profile = Image.open('demo_image2.png')
 if choose == "About":
     col1, col2 = st.columns( [0.8, 0.2])
     with col1:               # To display the header text using css style
@@ -55,7 +55,7 @@ elif choose == "Blog":
             st.markdown(pdf_display, unsafe_allow_html=True)
         
         if topic=='Pandas':
-            feature_image1 = Image.open(r'C:\Users\13525\Desktop\Insights Bees\streamlit_website\Images\feature_image1.jpg')
+            feature_image1 = Image.open('demo_image2.png')
             with st.container():
                 image_col, text_col = st.columns((1,3))
                 with image_col:
