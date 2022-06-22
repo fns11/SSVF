@@ -20,7 +20,7 @@ with st.sidebar:
     }
     )
 
-logo = Image.open(r'C:\demo_image1.png')
+logo = Image.open(r'C:\My files/Downloads/Demo_image1.png)
 profile = Image.open(r'C:\demo_image2.png')
 if choose == "About":
     col1, col2 = st.columns( [0.8, 0.2])
