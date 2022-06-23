@@ -70,7 +70,7 @@ elif choose == "Blog":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Read PDF Tutorial',key='1'):            
-                    show_pdf('post1-compressed.pdf')
+                    show_pdf('SSVF HP Screener v6 9.2021.pdf')
             with col2:
                 st.button('Close PDF Tutorial',key='2')                   
             with col3:
