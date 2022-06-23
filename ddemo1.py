@@ -4,6 +4,7 @@ from streamlit_option_menu import option_menu
 from  PIL import Image
 import numpy as np
 import PyPDF2
+import click
 import pandas as pd
 #import streamlit.components.v1 as components
 import base64
