@@ -51,16 +51,16 @@ elif choose == "Blog":
         st.write('')
         # pdf file object
 # you can find find the pdf file with complete code in below
-pdfFileObj = open('SSVF HP Screener v6 9.2021.pdf')
+        pdfFileObj = open('SSVF HP Screener v6 9.2021.pdf')
 # pdf reader object
-pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 # number of pages in pdf
 print(pdfReader.numPages)
 # a page object
-pageObj = pdfReader.getPage(0)
+        pageObj = pdfReader.getPage(0)
 # extracting text from page.
 # this will print the text you can also save that into String
-print(pageObj.extractText())
+        print(pageObj.extractText())
         
         #def show_pdf(file_path):
             #with open(file_path,"rb") as f:
