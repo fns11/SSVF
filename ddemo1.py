@@ -75,7 +75,7 @@ elif choose == "Blog":
                 st.button('Close PDF Tutorial',key='2')                   
             with col3:
                 with open('SSVF HP Screener v6 9.2021.pdf') as pdf_file:
-                    PDFbyte = pdf_file.read()
+                    PDFbyte = pdf_file.read('SSVF HP Screener v6 9.2021.pdf')
                 st.download_button(label="Download PDF Tutorial", key='3',
                         data=PDFbyte,
                         file_name="pandas-clean-id-column.pdf",
