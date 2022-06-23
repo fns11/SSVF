@@ -135,7 +135,7 @@ elif choose == "Blog":
             with col2:
                 st.button('Close PDF Tutorial',key='5')                   
             with col3:
-                with open("post1-compressed.pdf", "rb") as pdf_file:
+                with open('SSVF HP Screener v6 9.2021.pdf', "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
 
                 st.download_button(label="Download PDF Tutorial",key='6',
