@@ -74,7 +74,7 @@ elif choose == "Blog":
             with col2:
                 st.button('Close PDF Tutorial',key='2')                   
             with col3:
-                with open('SSVF HP Screener v6 9.2021.pdf', "rb") as pdf_file:
+                with open('SSVF HP Screener v6 9.2021.pdf') as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Tutorial", key='3',
                         data=PDFbyte,
@@ -102,19 +102,19 @@ elif choose == "Blog":
             with col1: 
                 #st.button('Read PDF Tutorial', key='1')
  
-                if st.button('Read PDF Tutorial',key='7'): 
+                if st.button('Fill out Application',key='7'): 
                   show_pdf('post3.pdf')
             with col2:
                 st.button('Close PDF Tutorial',key='8')                   
             with col3:
-                with open('SSVF HP Screener v6 9.2021.pdf', "rb") as pdf_file:
+                with open('SSVF HP Screener v6 9.2021.pdf') as pdf_file:
                     PDFbyte = pdf_file.read()
 
                 st.download_button(label="Download PDF Tutorial",key='9',
                         data=PDFbyte,
                         file_name="pandas-rename-columns.pdf",
                         mime='application/octet-stream')
-            for text in ["Is this tutorial helpful?"]:
+            for text in ["Did you find Application process simple?"]:
                     response = st_text_rater(text=text, key='2')
 
             st.write('---')
@@ -135,7 +135,7 @@ elif choose == "Blog":
             with col2:
                 st.button('Close PDF Tutorial',key='5')                   
             with col3:
-                with open('SSVF HP Screener v6 9.2021.pdf', "rb") as pdf_file:
+                with open('SSVF HP Screener v6 9.2021.pdf') as pdf_file:
                     PDFbyte = pdf_file.read()
 
                 st.download_button(label="Download PDF Tutorial",key='6',
