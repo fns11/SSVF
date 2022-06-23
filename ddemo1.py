@@ -49,11 +49,24 @@ elif choose == "Blog":
         ) 
 
         st.write('')
-        def show_pdf(file_path):
-            with open(file_path,"rb") as f:
-                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
-            st.markdown(pdf_display, unsafe_allow_html=True)
+        # pdf file object
+# you can find find the pdf file with complete code in below
+pdfFileObj = open('SSVF HP Screener v6 9.2021.pdf')
+# pdf reader object
+pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+# number of pages in pdf
+print(pdfReader.numPages)
+# a page object
+pageObj = pdfReader.getPage(0)
+# extracting text from page.
+# this will print the text you can also save that into String
+print(pageObj.extractText())
+        
+        #def show_pdf(file_path):
+            #with open(file_path,"rb") as f:
+                #base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+            #pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
+            #st.markdown(pdf_display, unsafe_allow_html=True)
         
         if topic=='Pandas':
             feature_image1 = Image.open('demo_image2.png')
@@ -68,22 +81,6 @@ elif choose == "Blog":
                     st.markdown('<p class="font">Clean a ‘Numeric’ ID Column in Pandas Dataframe</p>', unsafe_allow_html=True)    
                     st.markdown("By Sharone Li - As a data scientist, you must have encountered this problem at least once in your data science journey: you import your data into a Pandas dataframe... [Continue to Read on Towards Data Science](https://towardsdatascience.com/clean-a-numeric-id-column-in-pandas-dataframe-fbe03c11e330)")
 
- 
-# pdf file object
-# you can find find the pdf file with complete code in below
-pdfFileObj = open('SSVF HP Screener v6 9.2021.pdf')
-# pdf reader object
-pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-# number of pages in pdf
-print(pdfReader.numPages)
-# a page object
-pageObj = pdfReader.getPage(0)
-# extracting text from page.
-# this will print the text you can also save that into String
-print(pageObj.extractText())
-
-
-            
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Read PDF Tutorial',key='1'):            
