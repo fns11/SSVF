@@ -6,6 +6,7 @@ import numpy as np
 import PyPDF2
 #import click
 import pandas as pd
+from pikepdf import Pdf
 #import streamlit.components.v1 as components
 import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
@@ -50,13 +51,29 @@ elif choose == "Blog":
         ) 
 
         st.write('')
-        # pdf file object
+
+uploaded_pdf_file = st.file_uploader('SSVF HP Screener v6 9.2021.pdf', type=['pdf'])
+
+if uploaded_pdf_file is not None:
+    pdffile = Pdf.open('SSVF HP Screener v6 9.2021.pdf')
+    # do some processing here with the pdf file
+    pdffile.save('unlocked.pdf')
+
+with open("unlocked.pdf", "rb") as pdf_file:
+    PDFbyte = pdf_file.read()
+
+st.download_button(label="Download unlocked.pdf",
+            data=PDFbyte,
+            file_name="unlocked.pdf",
+            mime='application/octet-stream')   
+    
+    # pdf file object
 # you can find find the pdf file with complete code in below
-        pdfFileObj = open('SSVF HP Screener v6 9.2021.pdf')
+        #pdfFileObj = open('SSVF HP Screener v6 9.2021.pdf')
 # pdf reader object
-        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+        #pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 # number of pages in pdf
-        print(pdfReader.numPages)
+        #print(pdfReader.numPages)
 
 # a page object
         pageObj = pdfReader.getPage(0)
