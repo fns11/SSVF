@@ -49,8 +49,8 @@ elif choose == "Blog":
         "nav-link-selected": {"background-color": "#080000"},
         },orientation='horizontal'
         ) 
-
-        st.write('')
+st.container()
+        st.write(--)
 
 uploaded_pdf_file = st.file_uploader('SSVF HP Screener v6 9.2021.pdf', type=['pdf'])
 
