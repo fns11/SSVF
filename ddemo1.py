@@ -108,7 +108,7 @@ st.download_button(label="Download unlocked.pdf",
                 st.button('Close PDF Tutorial',key='2')                   
             with col3:
                 with open('SSVF HP Screener v6 9.2021.pdf') as pdf_file:
-                    PDFbyte = pdf_file.read()
+                    PDFbyte = pdf_file.read() 
                     
                 st.download_button(label="Download PDF Tutorial", key='3',
                         data=PDFbyte,
@@ -160,7 +160,7 @@ st.download_button(label="Download unlocked.pdf",
 
                 with text_col:
                     st.markdown('<p class="font">Why and How to Reshape a Pandas Dataframe from Wide to Long</p>', unsafe_allow_html=True)    
-                    st.markdown("By Sharone Li - As data scientists, we know that data does not always come to us with the most desirable format... [Continue to Read on Towards Data Science](https://towardsdatascience.com/clean-a-numeric-id-column-in-pandas-dataframe-fbe03c11e330)")
+                    st.markdown("By Sharone Li - As data scientists, we know that data does not always come to us with the most desirable format... [Continue to Read on Towards Data Science]('https://drive.google.com/file/d/1HJOFbxT1_e2Eh39JdFCuNS6b9HJKt6my/view?usp=sharing')
                            
             col1, col2,col3 = st.columns(3)
             with col1:
